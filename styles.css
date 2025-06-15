@@ -1,0 +1,42 @@
+body {
+    background-color: #222222;
+    cursor: url("/arrow.cur"), auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+div.window {
+    position: absolute;
+}
+
+div.window.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: medium;
+}
+
+.id {
+    background-color: #000000;
+    color: #00ff00;
+    padding: 5px;
+    margin: 0px;
+    cursor: text;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.id.notworking {
+    color: #ff0000;
+}
+
+.id.unsure {
+    color: #ffff00;
+}
