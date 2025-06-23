@@ -1,5 +1,5 @@
 body {
-    background-color: #222222;
+    background-color: #111111;
     cursor: url("/arrow.cur"), auto;
     user-select: none;
     -webkit-user-select: none;
@@ -17,8 +17,27 @@ div.window.center {
     transform: translate(-50%, -50%);
 }
 
+div.window.left {
+    top: 50%;
+    left: 20px;
+    transform: translate(0px, -50%);
+}
+
+div.window.right {
+    --left: calc(20px + 460px + 3px + 20px);
+    top: 50%;
+    left: var(--left);
+    width: 100%;
+    max-width: calc(100% - var(--left) - 6px - 20px);
+    transform: translate(0px, -50%);
+}
+
 h1 {
-    font-size: medium;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 16px;
 }
 
 .id {
@@ -31,6 +50,10 @@ h1 {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
+}
+
+mark.id {
+    padding: inherit;
 }
 
 .id.notworking {

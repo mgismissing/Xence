@@ -5,14 +5,13 @@
         <link rel="stylesheet" href="/styles.css">
         <title>X_ence</title>
     </head>
-    <body>
-        <div class="window center" style="min-width: 360px; min-height: 240px; width: 720px; max-height: none;">
+    <body style="overflow: hidden; overflow-x: auto;">
+        <div class="window left" style="min-width: 360px; min-height: 240px; max-width: 480px; max-height: calc(100% - 80px);">
             <div class="title-bar">
-                <div class="title-bar-text">X_ence</div>
+                <div class="title-bar-text">OneUI 6.1 resource ID viewer</div>
                 <div class="title-bar-controls"></div>
             </div>
             <div class="window-body">
-                <h1>OneUI6 Resource IDs</h1>
                 <ul class="tree-view" style="max-height: 480px; overflow: hidden; overflow-y: auto;">
                     <li>SystemUI<ul>
                         <li>Lock Screen / KeyGuard<ul>
@@ -35,26 +34,28 @@
                                     <li>Bluetooth<ul><p class="id">drawable/quick_panel_icon_bluetooth</p></ul></li>
                                     <li>Data connection<ul><p class="id">drawable/quick_panel_icon_data_connection</p></ul></li>
                                     <li>Do not disturb<ul><p class="id">drawable/quick_panel_icon_donot_disturb</p></ul></li>
+                                    <li>Flashlight<ul><p class="id unsure">drawable/quick_panel_icon_flashlight</p></ul></li>
                                     <li>Flashlight (OFF)<ul><p class="id">drawable/quick_panel_icon_flashlight_off</p></ul></li>
                                     <li>Flashlight (ON)<ul><p class="id">drawable/quick_panel_icon_flashlight_on</p></ul></li>
                                     <li>Wi-Fi Hotspot<ul><p class="id">drawable/quick_panel_icon_wifihotspot</p></ul></li>
                                 </ul></li>
-                                <li>Labels<ul>
-                                    <li>Strings<ul>
-                                        <li>Airplane Mode<ul><p class="id">string/quick_settings_airplane_mode_label</p></ul></li>
-                                        <li>Bluetooth<ul><p class="id">string/quick_settings_bluetooth_label</p></ul></li>
-                                        <li>Wi-Fi<ul><p class="id notworking">string/quick_settings_wifi_label</p></ul></li>
-                                    </ul></li>
+                                <li>Strings<ul>
+                                    <li>Airplane Mode<ul><p class="id">string/quick_settings_airplane_mode_label</p></ul></li>
+                                    <li>Bluetooth<ul><p class="id">string/quick_settings_bluetooth_label</p></ul></li>
+                                    <li>Do not disturb<ul><p class="id">string/quick_settings_sec_dnd_label</p></ul></li>
+                                    <li>Flashlight<ul><p class="id">string/sec_quick_settings_flashlight_label</p></ul></li>
+                                    <li>Location<ul><p class="id notworking">string/quick_settings_location_label</p></ul></li>
+                                    <li>Wi-Fi<ul><p class="id">string/quick_settings_sec_wifi_label</p></ul></li>
                                 </ul></li>
                             </ul></li>
                         </ul></li>
                         <li>System Bar<ul>
-                            <li>Drawables<ui>
+                            <li>Drawables<ul>
                                 <li>Back<ul><p class="id">drawable/ic_samsung_sysbar_back<br>drawable/ic_samsung_sysbar_back_dark</p></ul></li>
-                                <li>Back (with keyboard)<ul><p class="id">drawable/ic_samsung_sysbar_back_ime<br>drawable/ic_samsung_sysbar_back_ime_dark</p></ul></li>
+                                <li>Back (with keyboard open)<ul><p class="id">drawable/ic_samsung_sysbar_back_ime<br>drawable/ic_samsung_sysbar_back_ime_dark</p></ul></li>
                                 <li>Home<ul><p class="id">drawable/ic_samsung_sysbar_home<br>drawable/ic_samsung_sysbar_home_dark</p></ul></li>
                                 <li>Recent<ul><p class="id">drawable/ic_samsung_sysbar_recent<br>drawable/ic_samsung_sysbar_recent_dark</p></ul></li>
-                            </ui></li>
+                            </ul></li>
                         </ul></li>
                         <li>Unknown<ul>
                             <p class="id unsure">color/open_theme_qp_bg_color</p>
@@ -66,6 +67,16 @@
                 <p class="status-bar-field id">Working</p>
                 <p class="status-bar-field id unsure">Unsure</p>
                 <p class="status-bar-field id notworking">Not working</p>
+            </div>
+        </div>
+        <div class="window right" style="min-height: 240px; max-height: calc(100% - 80px);">
+            <div class="title-bar">
+                <div class="title-bar-text">Important info for decompiling</div>
+                <div class="title-bar-controls"></div>
+            </div>
+            <div class="window-body">
+                <h1>Samsung-specific resource names</h1>
+                <p>When Samsung made OneUI, it was simply cloned from AOSP and extended with OneUI-specific resources. Traces of this resource extension can be found with some prefixes like "sec" (Samsung Extended Component) and "samsung". You should normally prefer these names when editing, because they're likely the ones being used. An example is the "Wi-Fi" string in the Quick Settings menu: you can find both <mark class="id">string/quick_settings_sec_wifi_label</mark> and <mark class="id">string/quick_settings_wifi_label</mark>. You can easily guess which one is actually being used.</p>
             </div>
         </div>
     </body>
